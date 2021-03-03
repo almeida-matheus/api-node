@@ -56,9 +56,11 @@
 
 <img src="./public/assets/main.png" alt="NPS API">
 
-> API desenvolvida em NodeJS durante a 4º Next Level Week! Nela é possível cadastrar usuários e pesquisas, contem uma função de envio de e-mail para os usuários responderem a pesquisa de satisfação e através da pesquisa é realizado o cálculo do NPS (Métrica de satisfação).
+> Restful API in node.js to calculate NPS
 
-> Typescript como a linguagem do projeto, Express para gerenciamento das rotas, TypeORM para manipulação dos dados, testes automatizados e envio de e-mail.
+Restful API developed in NodeJS during the 4th Next Level Week of [Rocketseat](https://rocketseat.com.br/).<br>It is possible to register users and surveys, send email to users to answer the satisfaction survey and through the survey the NPS (Satisfaction Metric) is calculated.
+
+<!-- API Restful desenvolvida em NodeJS durante a 4º Next Level Week da [Rocketseat](https://rocketseat.com.br/).<br> Nela é possível cadastrar usuários e pesquisas, contem uma função de envio de e-mail para os usuários responderem a pesquisa de satisfação e através da pesquisa é realizado o cálculo do NPS (Métrica de satisfação). -->
 
 <!-- <br> -->
 
@@ -66,20 +68,40 @@
 
 * Yarn
 * Node.js
+* Express
 * Typescript
 * TypeORM
 * Jest
 * Nodemailer/Ethereal-Email
 
-> Typescript como a linguagem do projeto, Express para gerenciamento das rotas, TypeORM para manipulação dos dados, testes automatizados e envio de e-mail.
+Back-end as Node.js, Yarn as package manager, Typescript as the project language, Express for route management, TypeORM for data manipulation, Jest for automated tests and Nodemailer for sending e-mail.
+
+<!-- Back-end como Node.js, Yarn como gerenciador de pacotes, Typescript como a linguagem do projeto, Express para gerenciamento das rotas, TypeORM para manipulação dos dados, Jest para testes automatizados e Nodemailer para o envio de e-mail. -->
 
 <!-- USAGE -->
 ## Usage
 
-### Diagram
+### Database diagram
 
-<img src="./public/assets/diagram.png" alt="NPS API">
+<img src="./public/assets/database.png" alt="NPS API">
 
+### Json
+#### **users**
+post url/users
+```json
+{
+  "name": "teste2",
+  "email": "teste2@teste.com"
+}
+```
+#### **surveys**
+post url/surveys
+```json
+{
+  "title": "queremos ouvir sua opnião",
+  "description": "de 0 a 10, quanto vc recomendaria a rocketseat"
+}
+```
 
 _Refer to the [Documentation](https://google.com)_
 
@@ -94,17 +116,39 @@ git clone "https://github.com/almeida-matheus/node-api.git"
 
 #### 2. Install requirements
 Install ```node```, ```npm``` and ```yarn``` . </br>
-Follow the steps from the [reference document](https://docs.python-guide.org/starting/installation/).
+Follow the steps from the [reference document](https://docs.python-guide.org/starting/installation/). <br>
+Debian-based linux as root:
+```bash
+## node and npm
+curl -sL https://deb.nodesource.com/setup_lts.x | bash -
+apt-get install -y nodejs
 
-#### 3. Run the server
+## yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt update && sudo apt install --no-install-recommends yarn
+
+echo 'export PATH="$PATH:`yarn global bin`"' >> ~/.bashrc
+##obs: if you are using zsh shell change ~/.bashrc to ~/.zshrc
+```
+
+#### 3. Install the dependencies
 ```bash
 ## Install the dependencies
 yarn add express
 yarn add @types/express -D
+yarn add typescript -D
+yarn add ts-node-dev -D
 yarn add uuid
 yarn add @types/uuid -D
+yarn add jest @types/jest -D
+yarn add ts-jest -D
+yarn add supertest @types/supertest -D
+```
 
-
+#### 4. Run the server
+```bash
 ## Run the server
 yarn dev
 
@@ -118,10 +162,10 @@ The project will be available at [http://localhost:3333](http://localhost:3333) 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
-2. Clone this project (`git checkout -b feature/AmazingFeature`)
-3. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+2. Clone this project (`git clone https://github.com/almeida-matheus/api-node.git`)
+3. Create your Feature Branch (`git checkout -b featureBranch`)
 4. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-5. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Push to the Branch (`git push origin featureBranch`)
 6. Open a Pull Request
 
 <!-- LICENSE -->

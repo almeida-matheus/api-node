@@ -1,20 +1,4 @@
-//typeorm
-import 'reflect-metadata'
-//express
-import express from 'express';
-//database
-import './database';
-//router.ts
-import { router } from './routes';
-
-//iniciar express
-const app = express();
-
-//habilitar o trabalho com json
-app.use(express.json());
-
-//middleware
-app.use(router);
+import { app } from './app';
 
 // criar servidor | 1 = porta
 app.listen(3333, () => console.log("server is running"));

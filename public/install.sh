@@ -38,6 +38,25 @@ yarn add uuid &&
 ##adicionar os tipos/tipagem da biblioteca
 yarn add @types/uuid -D &&
 
+##instalar biblioteca de testes
+# yarn add jest @types/jest -D
+##iniciar testes
+# yarn jest --init
+##habilitar ts nos testes
+# yarn add ts-jest -D
+
+#adicionar biblioteca supertest para teste de integração
+# yarn add supertest @types/supertest -D
+
+
+
+
+##rodar migrations
+# yarn typeorm migration:run
+##rodar testes
+#yarn test
+
+
 ##Fim do Script
 echo "Finish"
 

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getCustomRepository} from 'typeorm';
+import { getCustomRepository } from 'typeorm';
 
 import { UsersRepository } from '../repositories/UsersRepository';
 
@@ -27,7 +27,8 @@ class UserController {
     //retorna uma promise, então precisa usar o await
     await usersRepository.save(user);
 
-    return response.json(user);
+    //201: create
+    return response.status(201).json(user);
   }
 }
 

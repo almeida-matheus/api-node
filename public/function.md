@@ -5,6 +5,7 @@
 
 > /src/server.ts:
 - **inicia o servidor express, usa o routes.ts q chama o controller**
+- obs: para iniciar o supertest sem iniciar o servidor, moveu tudo menos criar servidor para app.ts
 
 > /src/database/index.ts
 - **cria a conexão com o banco de dados utilizado o typeORM**
@@ -30,7 +31,8 @@
 - aqui faz o calculo do id e realmente salva no banco de dados
 
 > repositories
-- Serve como repositório customizado para o UserController getCustomRepository- - - routes -> Controller -> /repositories/UsersRepository com base no /model/User;
+- Serve como repositório customizado para o UserController getCustomRepository
+- routes -> Controller -> /repositories/UsersRepository com base no /model/User;
 
 > ormconfig.json:
 - **módulo que gerencia o banco de dados**
@@ -43,7 +45,19 @@
 > tsconfig.json
 - **arquivo de configurações do typescript**
 
+> jest.config.ts
+- **arquivo de configuração dos testes do jest**
+
 ## Comandos
+
+server:
+`server.ts cria o server com base no app.ts que consulta o /src/database/index.ts para criar o banco e tabela`
+
+**request:**
+`request → routes → controller → repository (faz a criação pq extende o /model/.ts`
+**response:**
+`repository → controller → response`
+
 
 inicializar um processo
 
@@ -55,4 +69,8 @@ finalizar um processo
 
 ```bash
 pkill node
+```
+iniciar um test
+```bash
+yarn test
 ```
