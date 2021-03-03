@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
+import { getCustomRepository} from 'typeorm';
 
-import { User } from '../models/User';
+import { UsersRepository } from '../repositories/UsersRepository';
 
 //inserir os dados e salvar no banco de dados
 class UserController {
@@ -10,7 +10,8 @@ class UserController {
 
     //passar a intidade q quer cirar o usuario
     //cria um repositorio de usuario
-    const usersRepository = getRepository(User);
+    //para acessar o repositorio, pega a intidade e reconhece, fazendo o mapeamento da tabela
+    const usersRepository = getCustomRepository(UsersRepository);
 
     //extrair um emaail e se ele existir retornar status e mensagem de err
     //find/one = SELECT * FROM USERS WHERE EMAIL = "EMAIL"

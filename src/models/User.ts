@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
 //biblioteca uuid
 import { v4 as uuid } from 'uuid';
 
-// entity
+// entity (nome da tabela do migrations)
 @Entity('users')
 class User {
 

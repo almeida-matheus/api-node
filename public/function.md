@@ -29,10 +29,12 @@
 - assim como o migration/createUser.ts é declarado o nome das colunas
 - aqui faz o calculo do id e realmente salva no banco de dados
 
+> repositories
+- Serve como repositório customizado para o UserController getCustomRepository- - - routes -> Controller -> /repositories/UsersRepository com base no /model/User;
+
 > ormconfig.json:
 - **módulo que gerencia o banco de dados**
 - definir o banco de dados e diretorio; migrations e direto; identidades
-
 
 > package.json:
 - **arquivo de configuração geral do projeto**

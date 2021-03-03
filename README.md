@@ -7,23 +7,17 @@
   <a href="#about-the-project">About The Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#usage">Usage</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#contributing">Contributingr</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#contributing">Contributing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#license">License</a>
 </p>
 
-<h1></h1>
+<h2></h2>
 
 <p align="center">
       <a href="#">
-        <img  src="https://img.shields.io/badge/-SEE%20THE%20PROJECT-1100FF?&style=for-the-badge&logoColor=fff"/>
+        <img  src="https://img.shields.io/badge/-ACCESS%20THE%20PROJECT-1100FF?&style=for-the-badge&logoColor=fff"/>
       </a>
 </p>
-
-<p align="center">
-      <a href="#">See the project</a>
-</p>
-
-<br>
 
 <!-- PROJECT LOGO -->
 <!-- <br />
