@@ -1,23 +1,19 @@
-<!-- [![Node Version](https://img.shields.io/badge/python-3.9-1f425f.svg?style=for-the-badge)](https://python.org)
-[![Express Version](https://img.shields.io/badge/python-3.9-1f425f.svg?style=for-the-badge)](https://python.org) -->
-
 <h1 align="center">NPS-API</h1>
 
 <p align="center">
   <a href="#about-the-project">About The Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#usage">Usage</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#contributing">Contributing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#license">License</a>
+  <a href="#contributing">Contributing</a>
 </p>
 
 <h2></h2>
-
+<!-- 
 <p align="center">
       <a href="#">
         <img  src="https://img.shields.io/badge/-ACCESS%20THE%20PROJECT-1100FF?&style=for-the-badge&logoColor=fff"/>
       </a>
-</p>
+</p> -->
 
 <!-- PROJECT LOGO -->
 <!-- <br />
@@ -72,11 +68,13 @@ Restful API developed in NodeJS during the 4th Next Level Week of [Rocketseat](h
 * Typescript
 * TypeORM
 * Jest
-* Nodemailer/Ethereal-Email
+* Nodemailer
+* Ethereal
+* Handlebars
 
-Back-end as Node.js, Yarn as package manager, Typescript as the project language, Express for route management, TypeORM for data manipulation, Jest for automated tests and Nodemailer for sending e-mail.
+Back-end as Node.js, Yarn as package manager, Typescript as the project language, Express for route management, TypeORM for data manipulation, Jest for automated tests and Nodemailer in conjunction with Ethereal (SMTP protocol) and Handlebars for sending email.
 
-<!-- Back-end como Node.js, Yarn como gerenciador de pacotes, Typescript como a linguagem do projeto, Express para gerenciamento das rotas, TypeORM para manipulação dos dados, Jest para testes automatizados e Nodemailer para o envio de e-mail. -->
+<!-- Back-end com Node.js, Yarn como gerenciador de pacotes, Typescript como a linguagem do projeto, Express para gerenciamento das rotas, TypeORM para manipulação dos dados, Jest para testes automatizados e Nodemailer em conjunto com o Ethereal (protocolo SMTP) e Handlebars para o envio de e-mail. -->
 
 <!-- USAGE -->
 ## Usage
@@ -85,7 +83,7 @@ Back-end as Node.js, Yarn as package manager, Typescript as the project language
 
 <img src="./public/assets/database.png" alt="NPS API">
 
-### Json
+<!-- ### Json
 #### **users**
 post url/users
 ```json
@@ -102,8 +100,14 @@ post url/surveys
   "description": "de 0 a 10, quanto vc recomendaria a rocketseat"
 }
 ```
-
-_Refer to the [Documentation](https://google.com)_
+#### **sendmail**
+post/SendMail
+```json
+{
+	"email": "teste2@teste.com",
+	"survey_id": "18bc72e6-7192-4a2f-9771-88455aa9b0b5"
+}
+``` -->
 
 <!-- INSTALATION -->
 ## Installation
@@ -116,7 +120,6 @@ git clone "https://github.com/almeida-matheus/node-api.git"
 
 #### 2. Install requirements
 Install ```node```, ```npm``` and ```yarn``` . </br>
-Follow the steps from the [reference document](https://docs.python-guide.org/starting/installation/). <br>
 Debian-based linux as root:
 ```bash
 ## node and npm
@@ -135,7 +138,6 @@ echo 'export PATH="$PATH:`yarn global bin`"' >> ~/.bashrc
 
 #### 3. Install the dependencies
 ```bash
-## Install the dependencies
 yarn add express
 yarn add @types/express -D
 yarn add typescript -D
@@ -145,14 +147,15 @@ yarn add @types/uuid -D
 yarn add jest @types/jest -D
 yarn add ts-jest -D
 yarn add supertest @types/supertest -D
+yarn add nodemailer
+yarn add @types/nodemailer -D
+yarn add handlebars
 ```
 
 #### 4. Run the server
 ```bash
-## Run the server
 yarn dev
 
-## your server is up on port 3333
 ```
 The project will be available at [http://localhost:3333](http://localhost:3333) in the browser.
 
@@ -169,7 +172,7 @@ Contributions are what make the open source community such an amazing place to b
 6. Open a Pull Request
 
 <!-- LICENSE -->
-## License
+<!-- ## License
 
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information. -->
 

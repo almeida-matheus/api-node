@@ -34,6 +34,17 @@
 - Serve como repositório customizado para o UserController getCustomRepository
 - routes -> Controller -> /repositories/UsersRepository com base no /model/User;
 
+> services
+- **criar todo serviço de envio de e-mail**
+- criação da conta, enviar de e-mail
+- no controller sendmail vai chama-lo
+
+> views/emails
+- **template de emails**
+
+> .env
+- variaveis de ambiente
+
 > ormconfig.json:
 - **módulo que gerencia o banco de dados**
 - definir o banco de dados e diretorio; migrations e direto; identidades
@@ -58,6 +69,11 @@ server:
 **response:**
 `repository → controller → response`
 
+constructor()
+metodo executado assim que uma classe é chamada as informações dentro dele é executadas
+
+envio de e-mail
+controller/sendemail: adm repassa as informacoes do usuario para o sistema, e quando o sistema for chamado essa rota ele vai ter a responsabilidade de enviar o e-mail
 
 inicializar um processo
 
