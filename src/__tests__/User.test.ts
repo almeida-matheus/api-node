@@ -5,12 +5,22 @@ import { app } from '../app';
 //existe o createConnection do typeORM
 import createConnection from '../database';
 
+import { getConnection } from 'typeorm';
+
+
 describe('Users', () => {
   
   //antes de tudo rodar migrations
   beforeAll(async () => {
     const connection = await createConnection();
     await connection.runMigrations();
+  });
+
+  //excluir a tabela depois de terminar
+  afterAll(async () => {
+    const connection = getConnection();
+    await connection.dropDatabase();
+    await connection.close();
   });
 
   //teste pra ver se criar um novo usuario da certo

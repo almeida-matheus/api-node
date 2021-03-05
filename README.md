@@ -7,46 +7,6 @@
   <a href="#contributing">Contributing</a>
 </p>
 
-<h2></h2>
-<!-- 
-<p align="center">
-      <a href="#">
-        <img  src="https://img.shields.io/badge/-ACCESS%20THE%20PROJECT-1100FF?&style=for-the-badge&logoColor=fff"/>
-      </a>
-</p> -->
-
-<!-- PROJECT LOGO -->
-<!-- <br />
-<p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://raw.githubusercontent.com/othneildrew/Best-README-Template/master/images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Best-README-Template</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong> View Demo »</strong></a>
-    <br />
-  </p>
-</p> -->
-
-<!-- TABLE OF CONTENTS -->
-<!-- <details open="open">
-  <summary>Table of Contents</summary>
-  <br>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
-</details> -->
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -69,8 +29,6 @@ Restful API developed in NodeJS during the 4th Next Level Week of [Rocketseat](h
 * TypeORM
 * Jest
 * Nodemailer
-* Ethereal
-* Handlebars
 
 Back-end as Node.js, Yarn as package manager, Typescript as the project language, Express for route management, TypeORM for data manipulation, Jest for automated tests and Nodemailer in conjunction with Ethereal (SMTP protocol) and Handlebars for sending email.
 
@@ -82,32 +40,101 @@ Back-end as Node.js, Yarn as package manager, Typescript as the project language
 ### Database diagram
 
 <img src="./public/assets/database.png" alt="NPS API">
+<br>
 
-<!-- ### Json
 #### **users**
-post url/users
+```post``` url/users
 ```json
 {
-  "name": "teste2",
-  "email": "teste2@teste.com"
+	"name": "testezao",
+	"email": "testezao@teste.com"
+}
+```
+example of result:
+```json
+{
+  "id": "11b5e1ab-6a61-4b06-b221-e420a9aa3916",
+  "name": "testezao",
+  "email": "testezao@teste.com",
+  "created_at": "2021-03-05T20:20:19.000Z"
 }
 ```
 #### **surveys**
-post url/surveys
+```post``` url/surveys
 ```json
 {
   "title": "queremos ouvir sua opnião",
   "description": "de 0 a 10, quanto vc recomendaria a rocketseat"
 }
 ```
-#### **sendmail**
-post/SendMail
+example of result:
+
 ```json
 {
-	"email": "teste2@teste.com",
+  "id": "18bc72e6-7192-4a2f-9771-88455aa9b0b5",
+  "title": "queremos ouvir sua opnião",
+  "description": "de 0 a 10, quanto vc recomenda?",
+  "created_at": "2021-03-04T02:02:44.000Z"
+}
+```
+```get``` url/surveys <br>
+example of result:
+```json
+[
+  {
+"id": "18bc72e6-7192-4a2f-9771-88455aa9b0b5",
+    "title": "queremos ouvir sua opnião",
+    "description": "de 0 a 10, quanto vc recomenda?",
+    "created_at": "2021-03-04T02:02:44.000Z"
+  }
+]
+```
+#### **sendmail**
+```post``` url/SendMail
+```json
+{
+	"email": "testezao@teste.com",
 	"survey_id": "18bc72e6-7192-4a2f-9771-88455aa9b0b5"
 }
-``` -->
+```
+example of result:
+```json
+{
+  "id": "7a815cdf-bd51-4ac7-aa7c-0853af0e35f6",
+  "user_id": "11b5e1ab-6a61-4b06-b221-e420a9aa3916",
+  "survey_id": "18bc72e6-7192-4a2f-9771-88455aa9b0b5",
+  "created_at": "2021-03-05T20:23:24.000Z"
+}
+```
+<br>
+<img src="./public/assets/sendemail.png" alt="e-mail">
+<br>
+
+```get``` url/answers/:value/u=survey_id <br>
+example of result:
+
+```json
+{
+   "id":"7a815cdf-bd51-4ac7-aa7c-0853af0e35f6",
+   "user_id":"11b5e1ab-6a61-4b06-b221-e420a9aa3916",
+   "survey_id":"18bc72e6-7192-4a2f-9771-88455aa9b0b5",
+   "value":10,
+   "created_at":"2021-03-05T20:23:24.000Z"
+}
+```
+
+#### **nps**
+```get``` url/nps/:survey_id <br>
+example of result:
+```json
+{
+  "detractor": 0,
+  "promoters": 1,
+  "passive": 0,
+  "totalAnswers": 1,
+  "nps": 100
+}
+```
 
 <!-- INSTALATION -->
 ## Installation
@@ -150,6 +177,8 @@ yarn add supertest @types/supertest -D
 yarn add nodemailer
 yarn add @types/nodemailer -D
 yarn add handlebars
+yarn add yup
+yarn add express-async-errors
 ## database
 npm install typeorm --save
 npm install reflect-metadata --save
@@ -161,7 +190,6 @@ npm install sqlite3 --save
 #### 4. Run the server
 ```bash
 yarn dev
-
 ```
 The project will be available at [http://localhost:3333](http://localhost:3333) in the browser.
 

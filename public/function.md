@@ -5,7 +5,7 @@
 
 > /src/server.ts:
 - **inicia o servidor express, usa o routes.ts q chama o controller**
-- obs: para iniciar o supertest sem iniciar o servidor, moveu tudo menos criar servidor para app.ts
+- obs: para iniciar o supertest sem iniciar o servidor, moveu tudo menos criar servidor para app.ts (app.ts recebe os erros e trata-os)
 
 > /src/database/index.ts
 - **cria a conexão com o banco de dados utilizado o typeORM**
@@ -75,7 +75,27 @@ metodo executado assim que uma classe é chamada as informações dentro dele é
 envio de e-mail
 controller/sendemail: adm repassa as informacoes do usuario para o sistema, e quando o sistema for chamado essa rota ele vai ter a responsabilidade de enviar o e-mail
 
+calculo nps
+detratores => 0 - 6
+passivo => 7-8
+promotores => 9-10
+
+(n promotores - n detratores) / (n respondentes) * 100
+
 inicializar um processo
+
+exemplo de resposta ao acessar o link
+http://localhost:3333/answers/10?u=09dac43b-4550-42fc-acdd-d8901103172d
+valor adicionado
+```json
+{
+   "id":"09dac43b-4550-42fc-acdd-d8901103172d",
+   "user_id":"4d4c6966-78b3-407a-b6fd-29d6db7da658",
+   "survey_id":"18bc72e6-7192-4a2f-9771-88455aa9b0b5",
+   "value":10,
+   "created_at":"2021-03-04T02:03:26.000Z"
+}
+```
 
 ```bash
 yarn dev
@@ -88,5 +108,58 @@ pkill node
 ```
 iniciar um test
 ```bash
+yarn test
+```
+```bash
+yarn test
+
+```
+```bash
+## V1
+##criar package.json pré configurado
+yarn init -y
+
+##instalar dependencia express > microframework para criar rota, server, etc
+# yarn add express
+##adicionar biblioteca para tipagem do express (ctrl + espace)
+# yarn add @types/express -D
+
+##instalar typescript
+# yarn add typescript -D
+##criar o arquivo de configurações do typescript
+yarn tsc --init
+
+##comando para converter js para ts
+yarn add ts-node-dev -D
+
+## V2
+## database
+# npm install typeorm --save &&
+# npm install reflect-metadata --save &&
+# npm install @types/node --save-dev &&
+## driver database sqlite
+# npm install sqlite3 --save &&
+##install sqlite for linux debian derivate
+# sudo apt install sqlite
+
+##instalar biblioteca responsável por criar o uuid
+# yarn add uuid &&
+##adicionar os tipos/tipagem da biblioteca
+# yarn add @types/uuid -D &&
+
+##instalar biblioteca de testes
+# yarn add jest @types/jest -D
+##iniciar testes
+yarn jest --init
+##habilitar ts nos testes
+# yarn add ts-jest -D
+
+#adicionar biblioteca supertest para teste de integração
+# yarn add supertest @types/supertest -D
+
+
+##rodar migrations
+yarn typeorm migration:run
+##rodar testes
 yarn test
 ```
