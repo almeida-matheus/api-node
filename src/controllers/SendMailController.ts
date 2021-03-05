@@ -36,21 +36,26 @@ class SendMailController {
       });
     }
 
+    const npsPath = resolve(__dirname, '..', 'views', 'emails', 'npsMail.hbs');
+
+    //verificar se tem um registro criado pelo usuario
+    //where: [{ user_id: user.id }, { value: null }], = or | abaixo é and
     const surveyUserAlreadyExists = await surveysUsersRepository.findOne({
-      where: [{ user_id: user.id }, { value: null }],
+      where: { user_id: user.id, value: null },
       relations: ['user', 'survey'],
     });
 
+    //se nao existir survey user id = ""
     const variables = {
       name: user.name,
       title: survey.description,
-      user_id: user.id,
+      id: "",
       link: process.env.URL_MAIL,
     };
 
-    const npsPath = resolve(__dirname, '..', 'views', 'emails', 'npsMail.hbs');
 
     if (surveyUserAlreadyExists) {
+      variables.id = surveyUserAlreadyExists.id; //
       await SendMailService.execute(email, survey.title, variables, npsPath);
       return response.json(surveyUserAlreadyExists);
     }
@@ -61,6 +66,9 @@ class SendMailController {
     });
 
     await surveysUsersRepository.save(surveyUser);
+
+    //se nao existir id do valor na pesquisa desse usuaario coloca o id q acabou de criar
+    variables.id = surveyUser.id;
 
     await SendMailService.execute(email, survey.title, variables, npsPath);
 

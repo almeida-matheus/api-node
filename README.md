@@ -150,6 +150,12 @@ yarn add supertest @types/supertest -D
 yarn add nodemailer
 yarn add @types/nodemailer -D
 yarn add handlebars
+## database
+npm install typeorm --save
+npm install reflect-metadata --save
+npm install @types/node --save-dev
+## driver database sqlite
+npm install sqlite3 --save
 ```
 
 #### 4. Run the server
