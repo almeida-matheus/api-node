@@ -7,6 +7,8 @@
   <a href="#contributing">Contributing</a>
 </p>
 
+<br>
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -40,7 +42,6 @@ Back-end as Node.js, Yarn as package manager, Typescript as the project language
 ### Database diagram
 
 <img src="./public/assets/database.png" alt="NPS API">
-<br>
 
 #### **users**
 ```post``` url/users
